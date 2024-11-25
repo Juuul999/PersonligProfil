@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace PersonligProfil
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+  
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -25,10 +23,49 @@ namespace PersonligProfil
             InitializeComponent();
         }
 
-        private void ButtonTest_Click(object sender, RoutedEventArgs e)
+        private bool isTextChanged = false; // Tilstand til at holde styr på, om teksten er blevet ændret
+
+        private void ChangeTextButton_Click(object sender, RoutedEventArgs e)
         {
-            String MSG = TestBoxTest.Text;
-            MessageBox.Show(MSG);
+            if (isTextChanged)
+            {
+                // Skift tilbage til oprindelig tekst
+                HvorforProjekt.Text = "Hvorfor har jeg lavet dette projekt?";
+            }
+            else
+            {
+                // Skift til den nye tekst
+                HvorforProjekt.Text = "Jeg har valgt at lave dette projekt for at vise lidt kodning jeg har lært. Prøv at trykke på knappen igen!";
+            }
+
+            // Toggle tilstanden
+            isTextChanged = !isTextChanged;
+        }
+
+
+        private void TestBoxTest_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TestBoxTest_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Jeg er ung, og ny til programmering og leder efter et sted hvor jeg kan udvikle mig som person og programmør. Jeg har begrænset erfaring indenfor kodning specifikt, og kan derfor formes efter hvad i har brug for.");
+        }
+
+        private void HvorforProjekt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ProfilTekst_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

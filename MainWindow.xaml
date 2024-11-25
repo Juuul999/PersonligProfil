@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersonligProfil"
         mc:Ignorable="d"
-        Title="WeeWoo" Height="450" Width="800">
+        Title="Personlig Profil" Height="450" Width="800" WindowState="Maximized" WindowStyle="None">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -14,11 +14,22 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <TextBlock 
+            Grid.Row="0" 
+            Grid.ColumnSpan="3" 
+            Text="Frederik Juul's Personlige Profil" 
+            FontSize="56" 
+            FontWeight="Bold" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Margin="10">
+        </TextBlock>
 
         <ScrollViewer
             Grid.Column="1"
@@ -28,101 +39,151 @@
             VerticalScrollBarVisibility="Auto">
 
             <StackPanel
-            x:Name="TestPanel"
-            Orientation="Vertical">
+                x:Name="TestPanel"
+                Orientation="Vertical">
 
-                <Label 
-                Content="Velkommen Til Frederiks Personlige Profil" 
-                    FontSize="13"/>
-                <Label 
-                Content="Hello World!"
-                    FontSize="10"/>
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
-                <Label 
-                Content="Hello World!" />
+                <Label Content="Velkommen Til Frederiks Personlige Profil" FontSize="26"/>
+                <Label Content="Dette projekt er kodet af mig i WPF" FontSize="16"/>
+                <Label Content="" FontSize="16"/>
             </StackPanel>
         </ScrollViewer>
 
-        <Button
-            x:Name="ButtonTest"
-            Click="ButtonTest_Click">
-
-            <Image
-                Grid.Column="0"
-                Grid.Row="2"
-                Height="100"
-                Width="100"
-                Source="C:\Users\frede\source\repos\PersonligProfil\Assets\Screenshot 2024-10-16 175446.png"/>
-
+        <TextBox 
+            Grid.Column="2" 
+            Grid.Row="1" 
+            x:Name="HvorforProjekt" 
+            AcceptsReturn="True" 
+            VerticalScrollBarVisibility="Auto"
+            TextWrapping="Wrap"
+            FontWeight="Bold"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            FontSize="30" 
+            Height="200" 
+            Margin="10" 
+            BorderThickness="0"
+            IsReadOnly="True"
+            Text="Hvorfor har jeg lavet dette projekt?" TextChanged="HvorforProjekt_TextChanged"
+                 >
+        </TextBox>
+        
+        
+        <Button 
+            x:Name="ChangeTextButton" 
+            Grid.Column="2" 
+            Grid.Row="1"
+            Width="200" 
+            Height="40" 
+            Margin="10"
+            Content="Tryk her" 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom" 
+            Click="ChangeTextButton_Click">
         </Button>
 
         <TextBox
-            x:Name="TestBoxTest"
+            x:Name="ProfilTekst"
             Grid.Column="0"
             Grid.Row="1"
-            Text="Alo world!">
-
+            Background="LightBlue"
+            TextWrapping="Wrap"
+            IsReadOnly="True"
+            BorderThickness="0"
+            FontSize="20"
+            Text="Jeg er en 21 årig elev som softwareudvikler. Jeg er født og opvokset i Ikast, en lille by i midtjylland, men er bosat i Silkeborg lige nu. Har 5 søskende samt 2 kattende, og indtil for nyligt en hund. Jeg bruger meget af min tid med IT, enten i form a kodning, ellers kan jeg også godt lide at game i min fritid." TextChanged="ProfilTekst_TextChanged"
+            >
         </TextBox>
 
         <Image
             Grid.Column="0"
+            Grid.Row="3"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Source="C:\Users\frede\source\repos\PersonligProfil\Assets\Screenshot 2024-10-16 175446.png"
+            >
+        </Image>        
+        
+        
+        <Image
+            Grid.Column="0"
+            Grid.Row="3"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Source="C:\Users\frede\source\repos\PersonligProfil\Assets\IMG_2271.jpg"
+            >
+        </Image>        
+        
+        
+        <Image
+            Grid.Column="0"
             Grid.Row="2"
-            Height="100"
-            Width="100"
-            Source="C:\Users\frede\source\repos\PersonligProfil\Assets\Screenshot 2024-10-16 175446.png"/>
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Source="C:\Users\frede\source\repos\PersonligProfil\Assets\IMG_2137.jpg"
+            >
+        </Image>
+
+        <TextBlock
+            Grid.Column="0"
+            Grid.Row="2"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Text="Dette er mine dyr (og mig)">
+
+        </TextBlock>
+
+        
+        
+        <Image
+            Grid.Column="0"
+            Grid.Row="2"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Source="C:\Users\frede\source\repos\PersonligProfil\Assets\IMG_2175.jpg"
+            >
+        </Image>
+
+        <Image
+            Grid.Column="1"
+            Grid.Row="2"
+            Grid.RowSpan="2"
+            Source="C:\Users\frede\source\repos\PersonligProfil\Assets\CV.png">
+
+
+        </Image>
+        
+        <Button
+            Grid.Column="2"
+            Grid.Row="3"
+            Width="200" 
+            Height="40" 
+            Margin="10"
+            Content="Tryk her" 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom" 
+            Click="Button_Click"
+            >
+            
+        </Button>
+
+        <TextBox 
+            Grid.Column="2" 
+            Grid.Row="3" 
+            x:Name="GenerelAnsøgning" 
+            AcceptsReturn="True" 
+            VerticalScrollBarVisibility="Auto"
+            TextWrapping="Wrap"
+            FontSize="30" 
+            FontWeight="Bold"
+            Height="40" 
+            Margin="10" 
+            BorderThickness="0"
+            IsReadOnly="True"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Text="Generel ansøgning nedenfor"
+                 >
+        </TextBox>
 
 
     </Grid>
